@@ -1,0 +1,19 @@
+.searchForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.searchLabel{
+    color: rgba(255, 255, 255, 0.75);
+    font-family: "Work Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    font-optical-sizing: auto;
+}
+
+.searchBox{
+    display: flex;
+    align-items: center;
+}

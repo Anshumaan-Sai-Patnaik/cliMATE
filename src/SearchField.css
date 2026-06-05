@@ -1,0 +1,16 @@
+.searchField{
+    width: 25vw;
+    min-width: 250px !important;
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-6px); }
+  80% { transform: translateX(6px); }
+}
+
+.searchField.wiggle {
+  animation: wiggle 0.4s ease;
+}

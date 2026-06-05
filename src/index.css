@@ -1,0 +1,24 @@
+:root {
+    --sky: #0e4f8a;
+    --sky-mid: #1a6fc4;
+    --sky-light: #e8f3ff;
+}
+
+.body{
+    overflow-y: auto;
+}
+
+.background{
+    background: linear-gradient( 135deg, var(--sky) 0%, var(--sky-mid) 45%, var(--sky-light) 100%);
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+}
+
+#root{
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}

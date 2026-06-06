@@ -2,17 +2,19 @@ import './SearchForm.css'
 
 import SearchField from './SearchField.jsx'
 import SearchButton from './SearchButton.jsx'
+import geoCodeAddress from './geoCodeAddress.jsx'
+import getWeather from './getWeather.jsx'
 
 import { useState } from 'react';
 
-export default function SearchForm() {
+export default function SearchForm({ setWeatherInfo }) {
     let [formInput, setFormInput] = useState("");
 
     function handleFormChange(event){
         setFormInput(event.target.value);
     }
 
-    function handleSubmit(event){
+    async function handleSubmit(event){
         if(formInput === "") {
             let searchField = document.querySelector('.searchField');
 
@@ -24,6 +26,23 @@ export default function SearchForm() {
         event.preventDefault();
         document.activeElement.blur();    // user presses Enter, the form submits, and the input immediately loses focus matching the behavior of clicking the submit button.
         setFormInput("");
+
+        let weatherData;
+        if (formInput) {
+            let geoCodeData = await geoCodeAddress(formInput)
+            console.log(geoCodeData)
+            if(geoCodeData.features.length > 0){
+                let lat = geoCodeData.features[0].properties.lat;
+                let lon = geoCodeData.features[0].properties.lon;
+
+                weatherData = await getWeather(lat, lon);
+            }
+            else{
+                weatherData = "No Data"
+            }
+        }
+
+        setWeatherInfo(weatherData);
     }
 
     return (

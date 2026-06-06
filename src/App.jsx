@@ -1,15 +1,19 @@
 import './App.css'
 
-import title from './Title'
-import searchForm from './SearchForm'
+import Title from './Title'
+import SearchForm from './SearchForm'
+import WeatherCard from './WeatherCard'
 
 import { useState } from 'react'
 
 function App() {
+    let [weatherInfo, setWeatherInfo] = useState(null);
+
     return (
         <>
-            {title()}
-            {searchForm()}
+            <Title />
+            <SearchForm setWeatherInfo={setWeatherInfo} />
+            {weatherInfo && <WeatherCard weatherInfo={weatherInfo} />}
         </>
     )
 }

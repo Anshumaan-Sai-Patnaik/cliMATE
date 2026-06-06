@@ -1,0 +1,43 @@
+.weather-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.weather-card__city {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+}
+
+.weather-card__condition {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    margin: 0.25rem 0 0;
+}
+
+.weather-card__temp {
+    font-size: 5rem;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.degree {
+    font-size: 1.8rem;
+    vertical-align: super;
+}
+
+.unit {
+    font-size: 2.2rem;
+    vertical-align: super;
+    margin-left: 0.1rem;
+}
+
+@media (max-width: 600px) {
+    .weather-card__temp {
+        font-size: 3rem;
+    }
+}
